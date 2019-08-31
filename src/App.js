@@ -1,7 +1,9 @@
 import React from "react";
 import "./App.css";
+
+import profile from "./assets/IMG_2802.jpg";
 function App() {
-  return <h1>Hello Rocketseat</h1>;
+  return <img src={profile} alt="prof" width="200" />;
 }
 
 export default App;
