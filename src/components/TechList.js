@@ -10,13 +10,17 @@ class TechList extends Component {
 
   // Executado assim que o componente aparecer em tela
   componentDidMount() {
-    const techs = localStorage.getIen('techss');
+    const techs = localStorage.getItem('techs');
+
+    if (techs) {
+      this.setState({ techs: JSON.parse(techs) });
+    }
   }
   // Executado sempre que ouver alteração das props ou stado
   componentDidUpdate(_, prevState) {
     // this.props, this.state
-    if (prevState !== this.state.techsc) {
-      localStorage.setItem('tech', JSON.stringify(this.state.techs));
+    if (prevState !== this.state.techs) {
+      localStorage.setItem('techs', JSON.stringify(this.state.techs));
     }
   }
   // Executa quando o componente dexa de existir
